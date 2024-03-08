@@ -1,3 +1,4 @@
+const nodemailer =require('nodemailer')
 exports.generateOTP =(otp_length=6)=>  {
     
     // generate 6 digit otp
@@ -10,7 +11,7 @@ exports.generateOTP =(otp_length=6)=>  {
 
     
 };
-exports.generteMailTransporter =() => 
+exports.generateMailTransporter =() => 
 nodemailer.createTransport({
     host: "sandbox.smtp.mailtrap.io",
     port: 2525,
