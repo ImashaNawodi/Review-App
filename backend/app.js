@@ -1,9 +1,11 @@
 const express =require('express');
-const UserRouter =require('./routes/user')
+require("./db")
+const userRouter =require('./routes/user')
+
 const app =express();
 //convert everything coming form the json format
 app.use(express.json());
-app.use('/api/user',UserRouter);
+app.use('/api/user',userRouter);
 //MVC 
 
 app.get('/about',(req,res)=>{
