@@ -5,11 +5,14 @@ require('./db')
 require('express-async-errors')
 const userRouter = require("./routes/user");
 const { errorHandler } = require("./middlewares/error");
-
+const cors= require('cors');  //conncet two domain 3000 & 8002
+const { handleNotFound } = require("./utils/helper");
 const app = express();
 app.use(express.json())
 app.use(morgan('dev'))
+app.use(cors())
 app.use("/api/user", userRouter);
+app.use('/*',handleNotFound)
 app.use(errorHandler)
 // app.post("/sign-in",
 //   (req, res, next) => {

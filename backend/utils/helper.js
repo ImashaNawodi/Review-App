@@ -16,3 +16,7 @@ exports.generateRandomByte = () => {
         })
     })
 } 
+
+exports.handleNotFound =(req,res) => {
+    this.sendError(req,'Not found' ,404)
+}
